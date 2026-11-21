@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rangkuman PTV #3 · Membangun Tower Esai Juara</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#26231f;--mute:#77746c;--line:#ece7da;--soft:#f8f6f0;--red:#D01012;--blue:#0063B7;--yellow:#FFCD00;--green:#008C3A;--orange:#FE8A18;--purple:#6B3FA0}
+  *{box-sizing:border-box}
+  body{margin:0;background:#fff;color:var(--ink);font:16px/1.65 Poppins,"Segoe UI",Arial,sans-serif}
+  .wrap{max-width:760px;margin:0 auto;padding:28px 16px 80px}
+  h1,h2,h3{font-family:"Titan One",Poppins,sans-serif;font-weight:400;letter-spacing:.3px;line-height:1.2}
+  h1{font-size:34px;margin:10px 0 6px}
+  h2{font-size:24px;margin:46px 0 10px;scroll-margin-top:70px}
+  h3{font-size:18px;margin:0 0 4px}
+  p{margin:0 0 12px}
+  .mute{color:var(--mute)}
+  .studs{display:flex;gap:7px}.studs i{width:30px;height:11px;border-radius:5px 5px 0 0;display:block}
+  nav{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);margin:0 -16px;padding:10px 16px;display:flex;gap:8px;overflow-x:auto}
+  nav a{flex:none;text-decoration:none;color:var(--ink);font-weight:600;font-size:14px;padding:6px 12px;border-radius:8px;background:var(--soft)}
+  .brick{position:relative;border-radius:12px;padding:16px 18px;margin:18px 0 12px;color:#fff;background:var(--c)}
+  .brick::before{content:"";position:absolute;top:-9px;left:18px;right:18px;height:10px;border-radius:5px 5px 0 0;background:repeating-linear-gradient(90deg,var(--c) 0 38px,transparent 38px 62px)}
+  .brick.dark{color:var(--ink)}
+  .brick ul{margin:8px 0 0;padding-left:20px}.brick li{margin:3px 0}
+  .card{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 12px;background:#fff}
+  .quote{border-left:4px solid var(--c,var(--blue));background:var(--soft);padding:10px 14px;border-radius:0 8px 8px 0;margin:8px 0;font-size:15px}
+  mark{padding:1px 3px;border-radius:3px}
+  .m1{background:#FFD9D9}.m2{background:#D7E7FF}.m3{background:#FFF0A3}.m4{background:#D3F1DD}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+  .step{border-radius:10px;padding:12px 14px;color:#fff;font-weight:600;background:var(--c)}
+  .step b{display:block;font-family:"Titan One",Poppins;font-weight:400;font-size:18px}
+  pre{background:var(--ink);color:#f4f1e8;border-radius:10px;padding:14px 16px;overflow-x:auto;font:14px/1.6 Consolas,monospace;margin:8px 0}
+  .btn{display:inline-block;font:inherit;font-weight:600;font-size:14px;padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;text-decoration:none}
+  .btn.main{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .row{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+  .warn{background:#fdecec;border-radius:10px;padding:14px 16px}
+  .warn b{color:#b3261e}
+  table{border-collapse:collapse;width:100%;font-size:15px}td,th{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:var(--soft)}
+  .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:8px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none}.toast.on{opacity:1}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="studs"><i style="background:var(--red)"></i><i style="background:var(--blue)"></i><i style="background:var(--yellow)"></i><i style="background:var(--green)"></i></div>
+  <h1>Membangun Tower Esai Juara</h1>
+  <p class="mute">Rangkuman materi PTV #3 oleh I Dewa Putu Sanjaya Ditha. Simpan halaman ini, lalu rakit brick yang hilang di kartu Brick Quest-mu.</p>
+  <nav>
+    <a href="#tower">Tower esai</a><a href="#bedah">Bedah DACIN</a><a href="#aturan">Aturan paragraf</a><a href="#purwarupa">Purwarupa</a><a href="#prompt">Prompt</a><a href="#sistem">Sistem lomba</a>
+  </nav>
+
+  <h2 id="tower">1. Esai itu tower Lego</h2>
+  <p>Empat brick. Kalau satu hilang, tower tetap berdiri tapi goyang, dan juri merasakannya.</p>
+  <div class="brick" style="--c:var(--red)"><h3>Pendahuluan · bikin juri peduli dalam 30 detik</h3>
+    <ul><li>Kalimat pertama berisi data atau kejadian nyata, bukan definisi.</li><li>Sekitar 70% data, 30% pendapat.</li><li>Bukti tiga lapis: nasional, tren, lalu kasus lokal.</li><li>Rumusan masalah 2 sampai 3 pertanyaan tajam.</li><li>Panjang 1,5 sampai 2 halaman.</li></ul></div>
+  <div class="brick" style="--c:var(--blue)"><h3>Pembahasan · satu gagasan, dibedah tuntas</h3>
+    <ul><li>Akar masalah ditulis sebagai tindakan nyata.</li><li>Satu solusi, bukan lima.</li><li>Cara kerja dalam 3 langkah: siapa melakukan apa.</li><li>Pelaksanaan: siapa, kapan, berapa biaya.</li><li>Kelayakan: data, contoh berhasil, dasar hukum, pemilik wewenang.</li><li>Satu paragraf target SMART: spesifik, terukur, bisa dicapai, relevan, ada tenggat.</li></ul></div>
+  <div class="brick dark" style="--c:var(--yellow)"><h3>Penutup · kunci di puncak</h3>
+    <ul><li>Simpulan menjawab rumusan masalah, tanpa data baru.</li><li>Rekomendasi untuk pihak yang jelas.</li><li>Kalimat jembatan dari gagasan ke harapan.</li></ul></div>
+  <div class="brick" style="--c:var(--green)"><h3>Lampiran · pelat dasar yang menopang</h3>
+    <ul><li>Purwarupa dan QR supaya juri bisa mencoba di HP.</li><li>Tabel analisis: perbandingan dan biaya.</li><li>Gambar bernomor, berjudul, satu pesan, dan bersumber.</li></ul></div>
+
+  <h2 id="bedah">2. Bedah naskah juara: DACIN</h2>
+  <p class="mute">DACIN, Juara 1 Essay Competition Constheia 2026, Universitas Sebelas Maret.</p>
+  <div class="card"><h3>Pembuka: satu kejadian konkret</h3>
+    <div class="quote" style="--c:var(--red)"><mark class="m1">Dua warga Kota Cirebon menerima tagihan PBB-P2 yang lahir dari peraturan daerah yang sama.</mark> <mark class="m2">Tagihan pertama naik dari Rp6,2 juta menjadi Rp65 juta, sedangkan tagihan kedua hanya naik dari Rp80 ribu menjadi Rp141 ribu.</mark></div>
+    <p>Merah: orang dan tempat nyata. Biru: angka yang membuat juri bertanya kenapa bisa begitu.</p></div>
+  <div class="card"><h3>Bukti berlapis</h3>
+    <p>Nasional: 104 daerah menaikkan PBB-P2, 20 di antaranya lebih dari 100 persen. Lokal: Jombang naik hingga 1.202 persen dan 11.000 keberatan masuk. Aturan: Pasal 14 PMK 85/2024 tidak punya ambang keseragaman. Setiap lapis menyebut sumbernya.</p></div>
+  <div class="card"><h3>Kelayakan tanpa kewenangan baru</h3>
+    <p>Data sudah dikelola Bapenda (NJOP dan BPHTB), peta Zona Nilai Tanah dari ATR/BPN, dasar hukum Pasal 14 dan 15 PMK 85/2024, Pasal 166 Permendagri 120/2018, dan Pasal 96 ayat (4) UU 13/2022. Contoh berhasil: studi rasio Philadelphia.</p></div>
+  <div class="card"><h3>SMART dalam satu paragraf</h3>
+    <p><b>S</b> uji coba di Kabupaten Semarang. <b>M</b> minimal 80 persen zona menyala hijau dan keberatan karena salah taksir turun separuh. <b>A</b> data sudah dikuasai Bapenda. <b>R</b> sesuai Pasal 14 dan 15 PMK 85/2024. <b>T</b> Januari 2027 sampai Desember 2029.</p></div>
+  <div class="card"><h3>Penutup yang mengunci</h3>
+    <p>Simpulan mengulang akar masalah (lompatan buta) dan tiga modul solusi. Lalu tiga saran untuk pihak yang jelas: daerah, Kementerian Keuangan dan Kementerian Dalam Negeri, serta DPRD dan mahasiswa. Kalimat terakhir kembali ke tema lomba.</p></div>
+
+  <h2 id="aturan">3. Aturan paragraf</h2>
+  <div class="grid">
+    <div class="step" style="--c:var(--red)"><b>P · Poin</b>Satu klaim di kalimat pertama</div>
+    <div class="step" style="--c:var(--blue)"><b>E · Bukti</b>Angka resmi, sumber, tahun</div>
+    <div class="step" style="--c:#C99A00"><b>E · Penjelasan</b>Arti angka bagi masalah</div>
+    <div class="step" style="--c:var(--green)"><b>L · Kaitan</b>Antar ke paragraf berikutnya</div>
+  </div>
+  <p style="margin-top:12px">Di dalam kalimat, hindari tanda pisah panjang, titik dua, dan titik koma. Pecah jadi dua kalimat pendek.</p>
+
+  <h2 id="purwarupa">4. Purwarupa dan QR</h2>
+  <div class="card"><h3>Lima syarat purwarupa yang baik</h3>
+    <ol style="margin:6px 0 0;padding-left:20px"><li>Satu file HTML.</li><li>Pas di layar HP.</li><li>Alurnya sama dengan cara kerja di esai.</li><li>Data contoh masuk akal.</li><li>Tombolnya benar-benar jalan.</li></ol></div>
+  <div class="grid">
+    <div class="step" style="--c:var(--red)"><b>1. Simpan</b>index.html, satu file</div>
+    <div class="step" style="--c:var(--blue)"><b>2. Unggah</b>ke repositori GitHub</div>
+    <div class="step" style="--c:var(--ink)"><b>3. Import</b>di Vercel, dapat link</div>
+    <div class="step" style="--c:var(--green)"><b>4. Buat QR</b>langsung ke link final</div>
+  </div>
+  <p style="margin-top:12px">Buat QR statis dengan Python (pasang dulu: <code>pip install qrcode[pil]</code>):</p>
+  <pre id="qrcode">import qrcode
+
+url = "https://link-purwarupamu.vercel.app"
+qrcode.make(url).save("qr.png")</pre>
+  <div class="row"><button class="btn" data-copy="qrcode">Salin kode</button></div>
+  <p>Contoh purwarupa yang bisa dicoba:</p>
+  <div class="row"><a class="btn main" href="https://dacin-indonesia.vercel.app" target="_blank" rel="noopener">DACIN</a><a class="btn main" href="https://profilkemala2.vercel.app/" target="_blank" rel="noopener">Profil Kemala (contoh deploy)</a></div>
+
+  <h2 id="prompt">5. Prompt juga Lego</h2>
+  <p>Enam brick: <b>Peran</b>, <b>Konteks</b> (isi buku panduan), <b>Tugas</b>, <b>Aturan</b>, <b>Format</b>, dan <b>Contoh</b>. Template lengkap yang bisa diedit dan disalin ada di halaman berikut.</p>
+  <div class="row"><a class="btn main" href="prompt.html">Buka template prompt 6 brick</a></div>
+  <table><tr><th>Belum juara</th><th>Juara</th></tr>
+    <tr><td>Minta AI menulis esai utuh dalam satu perintah</td><td>Satu prompt untuk satu brick: ide, kerangka, pendahuluan, pembahasan, penutup, lampiran, cek sumber</td></tr>
+    <tr><td>Langsung mengirim hasil AI</td><td>Memakai AI untuk riset, kritik, dan simulasi juri, lalu memeriksa semuanya sendiri</td></tr></table>
+  <div class="warn" style="margin-top:14px"><b>Wajib:</b> buka sendiri setiap sumber. Tautan harus hidup dan isinya sama dengan yang dikutip. Jurnal yang tidak bisa ditemukan, hapus.</div>
+
+  <h2 id="sistem">6. Sistem, bukan begadang</h2>
+  <div class="card"><ul style="margin:0;padding-left:20px">
+    <li>Satu ide bisa dipakai di beberapa lomba dengan menyesuaikan tema.</li>
+    <li>Kerjakan beberapa lomba bersamaan di tahap berbeda: riset, tulis, revisi.</li>
+    <li>Semua tenggat ada di satu tabel. Naskah jadi tujuh hari sebelum batas kirim untuk revisi.</li></ul></div>
+  <div class="row" style="margin-top:20px"><a class="btn main" href="./">Main Brick Quest lagi</a></div>
+</div>
+<div class="toast" id="toast">Tersalin</div>
+<script>
+document.querySelectorAll("[data-copy]").forEach(b=>b.onclick=()=>{const t=document.getElementById(b.dataset.copy).textContent;
+  (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).catch(()=>{const a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();document.execCommand("copy");a.remove()})
+  .finally(()=>{const x=document.getElementById("toast");x.classList.add("on");setTimeout(()=>x.classList.remove("on"),1300)})});
+</script>
+</body>
+</html>

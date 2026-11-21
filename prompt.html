@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Template Prompt 6 Brick</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#37352f;--mute:#787774;--line:#e9e9e7;--soft:#f7f7f5;
+    --red:#D01012;--blue:#0063B7;--yellow:#FFCD00;--green:#008C3A;--orange:#FE8A18;--purple:#6B3FA0}
+  *{box-sizing:border-box}
+  body{margin:0;background:#fff;color:var(--ink);font:16px/1.6 Poppins,"Segoe UI",Arial,sans-serif}
+  h1,h2{font-family:"Titan One",Poppins,sans-serif;font-weight:400;letter-spacing:.3px}
+  .wrap{max-width:720px;margin:0 auto;padding:32px 16px 64px}
+  h1{font-size:30px;line-height:1.2;margin:0 0 8px}
+  h2{font-size:22px;margin:44px 0 6px}
+  p.sub{color:var(--mute);margin:0 0 20px}
+  .brick{border:1px solid var(--line);border-radius:10px;padding:14px 16px 16px;margin:0 0 14px;position:relative}
+  .brick::before{content:"";position:absolute;left:16px;top:-7px;width:44px;height:7px;border-radius:4px 4px 0 0;background:var(--c)}
+  .head{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+  .chip{background:var(--c);color:#fff;font-weight:700;font-size:13px;padding:3px 10px;border-radius:6px}
+  .chip.dark{color:var(--ink)}
+  .hint{color:var(--mute);font-size:14px}
+  textarea{width:100%;font:15px/1.55 inherit;font-family:inherit;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:10px 12px;background:var(--soft);resize:vertical;min-height:78px}
+  textarea:focus{outline:none;border-color:#c7c7c5;background:#fff}
+  .btn{font:inherit;font-weight:600;padding:10px 16px;border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer}
+  .btn.main{background:var(--ink);color:#fff;border-color:var(--ink);width:100%;padding:14px;margin-top:8px}
+  .btn.sm{font-size:13px;padding:5px 10px;margin-left:auto}
+  .warn{background:#fdecec;border-radius:8px;padding:14px 16px;margin:18px 0}
+  .warn b{color:#b3261e}
+  ol.chain{padding-left:0;list-style:none;counter-reset:c}
+  ol.chain li{counter-increment:c;border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:0 0 10px}
+  ol.chain li .t{display:flex;align-items:center;gap:10px;font-weight:700}
+  ol.chain li .t::before{content:counter(c);width:26px;height:26px;border-radius:6px;background:var(--soft);display:grid;place-items:center;font-size:14px}
+  ol.chain li pre{white-space:pre-wrap;font:14px/1.55 inherit;font-family:inherit;color:#555;margin:8px 0 0;background:var(--soft);padding:10px 12px;border-radius:8px}
+  .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:8px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none}
+  .toast.on{opacity:1}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Template Prompt 6 Brick</h1>
+  <p><a href="materi.html" style="color:#0063B7;font-weight:600;text-decoration:none">← Rangkuman materi PTV #3</a></p>
+  <p class="sub">Isi tiap brick, lalu salin prompt lengkapnya ke Claude. Semakin lengkap brick-nya, semakin kokoh hasilnya. Dari webinar PTV #3.</p>
+
+  <div id="bricks"></div>
+  <button class="btn main" id="copyAll">Salin prompt lengkap</button>
+
+  <h2>Rantai prompt: satu brick esai, satu prompt</h2>
+  <p class="sub">Jangan minta satu esai utuh sekaligus. Kerjakan berurutan, cek hasilnya di setiap langkah.</p>
+  <ol class="chain" id="chain"></ol>
+
+  <div class="warn"><b>Wajib:</b> buka sendiri setiap sumber yang disebut AI. Pastikan tautannya hidup, judul dan penulisnya sama, dan angkanya benar ada di dokumen itu. Sumber yang tidak bisa dibuka atau tidak bisa ditemukan harus dihapus.</div>
+</div>
+<div class="toast" id="toast">Tersalin</div>
+<script>
+const B=[
+ ["Peran","--red","Siapa Claude dalam tugas ini.",
+  "Kamu adalah juri lomba esai nasional sekaligus penulis esai yang sudah sering juara. Kamu menulis dengan bahasa yang jelas untuk orang awam."],
+ ["Konteks","--blue","Tempel isi buku panduan lomba: tema, subtema, cara penilaian, batas halaman.",
+  "Lomba: [nama lomba]\nTema dan subtema: [tempel]\nKriteria penilaian dan bobotnya: [tempel dari buku panduan]\nBatas panjang naskah: [misal 5 sampai 8 halaman]"],
+ ["Tugas","--yellow","Satu tugas yang spesifik, bukan seluruh esai sekaligus.",
+  "Tuliskan bagian Pendahuluan untuk gagasan [nama gagasan], yaitu [jelaskan gagasan dalam 1 kalimat], di lokasi [kabupaten atau kota]."],
+ ["Aturan","--green","Batasan yang wajib dipatuhi.",
+  "Panjang 1,5 sampai 2 halaman. Komposisi sekitar 70% data dan 30% pendapat. Buka dengan satu data yang mengejutkan. Pakai bukti tiga lapis: data nasional, tren beberapa tahun, lalu kasus lokal. Setiap paragraf memakai pola PEEL. Jangan pakai tanda pisah panjang, titik dua, atau titik koma di dalam kalimat. Jangan mengarang data. Tulis [PERLU DATA] bila datanya belum ada."],
+ ["Format","--orange","Bentuk hasil yang kamu mau.",
+  "Tulis dalam paragraf, tanpa poin-poin. Akhiri dengan rumusan masalah dalam bentuk 2 sampai 3 pertanyaan. Setelah itu, daftar semua sumber lengkap dengan tautannya."],
+ ["Contoh","--purple","Tempel satu paragraf contoh yang gayanya kamu suka.",
+  "Contoh gaya paragraf yang saya mau:\n[tempel satu paragraf dari esai juara atau tulisanmu sendiri]"],
+];
+const CH=[
+ ["Ide","Berdasarkan Konteks di atas, beri 5 ide gagasan. Untuk tiap ide: masalah apa, untuk siapa, di lokasi mana, dan kenapa belum ada yang menyelesaikannya."],
+ ["Kerangka","Untuk ide nomor [x], susun kerangka esai: Pendahuluan, Pembahasan (akar masalah, solusi, alur kerja, implementasi, kelayakan), Penutup, dan Lampiran. Tulis jumlah paragraf tiap bagian."],
+ ["Pendahuluan","Pakai template 6 brick di atas dengan Tugas: tulis Pendahuluan sesuai kerangka."],
+ ["Pembahasan","Tulis Pembahasan sesuai kerangka. Tunjukkan kelayakan lewat data, contoh yang sudah berhasil, dasar hukum, dan lembaga yang berwenang. Tutup dengan satu paragraf target yang spesifik, terukur, dan punya batas waktu."],
+ ["Penutup","Tulis Penutup: simpulan yang menjawab rumusan masalah, rekomendasi untuk pihak yang jelas, dan satu kalimat terakhir yang membekas. Jangan tambah data baru."],
+ ["Lampiran","Usulkan isi lampiran: purwarupa dan QR, tabel analisis, serta gambar. Setiap gambar wajib punya keterangan sumber."],
+ ["Cek sitasi","Buat tabel semua sumber di naskah: judul, penulis, tahun, tautan, dan kalimat di naskah yang memakainya. Tandai sumber yang kamu tidak yakin benar-benar ada."],
+];
+const $=id=>document.getElementById(id);
+const toast=t=>{$("toast").textContent=t;$("toast").classList.add("on");setTimeout(()=>$("toast").classList.remove("on"),1400)};
+const copy=(txt,msg)=>navigator.clipboard.writeText(txt).then(()=>toast(msg||"Tersalin")).catch(()=>{
+  const ta=document.createElement("textarea");ta.value=txt;document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();toast(msg||"Tersalin")});
+B.forEach(([n,c,h,v],i)=>{
+  $("bricks").insertAdjacentHTML("beforeend",`<div class="brick" style="--c:var(${c})">
+    <div class="head"><span class="chip ${c==="--yellow"?"dark":""}" style="--c:var(${c})">${i+1}. ${n}</span><span class="hint">${h}</span>
+    <button class="btn sm" data-i="${i}">Salin</button></div>
+    <textarea id="t${i}" rows="3"></textarea></div>`);
+  $("t"+i).value=v;
+});
+document.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>copy($("t"+b.dataset.i).value,B[b.dataset.i][0]+" tersalin"));
+$("copyAll").onclick=()=>copy(B.map(([n],i)=>`## ${n.toUpperCase()}\n${$("t"+i).value.trim()}`).join("\n\n"),"Prompt lengkap tersalin");
+CH.forEach(([n,p])=>$("chain").insertAdjacentHTML("beforeend",`<li><div class="t">${n}<button class="btn sm">Salin</button></div><pre>${p}</pre></li>`));
+document.querySelectorAll("#chain li").forEach((li,i)=>li.querySelector("button").onclick=()=>copy(CH[i][1],CH[i][0]+" tersalin"));
+</script>
+</body>
+</html>
