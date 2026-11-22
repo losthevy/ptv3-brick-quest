@@ -39,6 +39,9 @@
   .warn b{color:#b3261e}
   table{border-collapse:collapse;width:100%;font-size:15px}td,th{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:var(--soft)}
   .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:8px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none}.toast.on{opacity:1}
+  .tpl{list-style:none;padding:0;margin:12px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px}
+  .tpl li{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:10px;padding:9px 12px;background:#fff;font-size:14.5px;font-weight:500}
+  .tpl .num{flex:none;width:30px;height:30px;border-radius:7px;color:#fff;display:grid;place-items:center;font-family:"Titan One",Poppins;font-size:14px}
 </style>
 </head>
 <body>
@@ -47,7 +50,7 @@
   <h1>Membangun Tower Esai Juara</h1>
   <p class="mute">Rangkuman materi PTV #3 oleh I Dewa Putu Sanjaya Ditha. Simpan halaman ini, lalu rakit brick yang hilang di kartu Brick Quest-mu.</p>
   <nav>
-    <a href="#tower">Tower esai</a><a href="#bedah">Bedah DACIN</a><a href="#aturan">Aturan paragraf</a><a href="#purwarupa">Purwarupa</a><a href="#prompt">Prompt</a><a href="#sistem">Sistem lomba</a>
+    <a href="#tower">Tower esai</a><a href="#bedah">Bedah DACIN</a><a href="#template">Template lampiran</a><a href="#aturan">Aturan paragraf</a><a href="#purwarupa">Purwarupa</a><a href="#prompt">Prompt</a><a href="#sistem">Sistem lomba</a>
   </nav>
 
   <h2 id="tower">1. Esai itu tower Lego</h2>
@@ -75,7 +78,36 @@
   <div class="card"><h3>Penutup yang mengunci</h3>
     <p>Simpulan mengulang akar masalah (lompatan buta) dan tiga modul solusi. Lalu tiga saran untuk pihak yang jelas: daerah, Kementerian Keuangan dan Kementerian Dalam Negeri, serta DPRD dan mahasiswa. Kalimat terakhir kembali ke tema lomba.</p></div>
 
-  <h2 id="aturan">3. Aturan paragraf</h2>
+  <h2 id="template">3. Template lampiran untuk esaimu</h2>
+  <p>Dua puluh tiga jenis lampiran yang bisa kamu pakai. Jangan pakai semuanya. Pilih 3 sampai 6 yang paling menjawab keraguan juri untuk gagasanmu.</p>
+  <ol class="tpl">
+    <li><span class="num" style="background:var(--red)">1</span>Analisis SWOT atau Matriks TOWS</li>
+    <li><span class="num" style="background:var(--blue)">2</span>Analisis SMART</li>
+    <li><span class="num" style="background:#C99A00">3</span>Tabel Pentahelix atau Analisis Stakeholder</li>
+    <li><span class="num" style="background:var(--green)">4</span>Analisis Implementasi</li>
+    <li><span class="num" style="background:var(--orange)">5</span>Analisis RIA (esai kebijakan)</li>
+    <li><span class="num" style="background:var(--purple)">6</span>Analisis USG (esai kebijakan)</li>
+    <li><span class="num" style="background:var(--red)">7</span>Analisis Porter's Five Forces</li>
+    <li><span class="num" style="background:var(--blue)">8</span>Alur pikir esai</li>
+    <li><span class="num" style="background:#C99A00">9</span>Alur pikir masalah (Fishbone Diagram)</li>
+    <li><span class="num" style="background:var(--green)">10</span>Analisis Legal Kadaster</li>
+    <li><span class="num" style="background:var(--orange)">11</span>RAB</li>
+    <li><span class="num" style="background:var(--purple)">12</span>Flowchart</li>
+    <li><span class="num" style="background:var(--red)">13</span>Analisis SCBA (esai kebijakan) dan CBA, dibarengi RAB</li>
+    <li><span class="num" style="background:var(--blue)">14</span>Analisis IFE dan EFE</li>
+    <li><span class="num" style="background:#C99A00">15</span>Theory of Change</li>
+    <li><span class="num" style="background:var(--green)">16</span>Analisis Overview SDGs</li>
+    <li><span class="num" style="background:var(--orange)">17</span>Tampilan antarmuka purwarupa (esai purwarupa)</li>
+    <li><span class="num" style="background:var(--purple)">18</span>Analisis Dampak Sistemik</li>
+    <li><span class="num" style="background:var(--red)">19</span>Analisis Mitigasi Risiko (gambar)</li>
+    <li><span class="num" style="background:var(--blue)">20</span>Analisis PESTEL</li>
+    <li><span class="num" style="background:#C99A00">21</span>Visualisasi data urgensi masalah (gambar + QR Excel)</li>
+    <li><span class="num" style="background:var(--green)">22</span>Analisis Kelayakan Implementasi</li>
+    <li><span class="num" style="background:var(--orange)">23</span>Tabel Perbandingan atau Tabel Benchmark</li>
+  </ol>
+  <div class="card" style="margin-top:12px"><b>Tips memilih:</b> esai kebijakan cocok dengan RIA, USG, SCBA, dampak sistemik, dan kelayakan implementasi. Esai purwarupa cocok dengan tampilan antarmuka, flowchart, dan alur pikir. Semua esai terbantu oleh visualisasi data urgensi dan tabel benchmark.</div>
+
+  <h2 id="aturan">4. Aturan paragraf</h2>
   <div class="grid">
     <div class="step" style="--c:var(--red)"><b>P · Poin</b>Satu klaim di kalimat pertama</div>
     <div class="step" style="--c:var(--blue)"><b>E · Bukti</b>Angka resmi, sumber, tahun</div>
@@ -84,7 +116,7 @@
   </div>
   <p style="margin-top:12px">Di dalam kalimat, hindari tanda pisah panjang, titik dua, dan titik koma. Pecah jadi dua kalimat pendek.</p>
 
-  <h2 id="purwarupa">4. Purwarupa dan QR</h2>
+  <h2 id="purwarupa">5. Purwarupa dan QR</h2>
   <div class="card"><h3>Lima syarat purwarupa yang baik</h3>
     <ol style="margin:6px 0 0;padding-left:20px"><li>Satu file HTML.</li><li>Pas di layar HP.</li><li>Alurnya sama dengan cara kerja di esai.</li><li>Data contoh masuk akal.</li><li>Tombolnya benar-benar jalan.</li></ol></div>
   <div class="grid">
@@ -102,7 +134,7 @@ qrcode.make(url).save("qr.png")</pre>
   <p>Contoh purwarupa yang bisa dicoba:</p>
   <div class="row"><a class="btn main" href="https://dacin-indonesia.vercel.app" target="_blank" rel="noopener">DACIN</a><a class="btn main" href="https://profilkemala2.vercel.app/" target="_blank" rel="noopener">Profil Kemala (contoh deploy)</a></div>
 
-  <h2 id="prompt">5. Prompt juga Lego</h2>
+  <h2 id="prompt">6. Prompt juga Lego</h2>
   <p>Enam brick: <b>Peran</b>, <b>Konteks</b> (isi buku panduan), <b>Tugas</b>, <b>Aturan</b>, <b>Format</b>, dan <b>Contoh</b>. Template lengkap yang bisa diedit dan disalin ada di halaman berikut.</p>
   <div class="row"><a class="btn main" href="prompt.html">Buka template prompt 6 brick</a></div>
   <table><tr><th>Belum juara</th><th>Juara</th></tr>
@@ -110,7 +142,7 @@ qrcode.make(url).save("qr.png")</pre>
     <tr><td>Langsung mengirim hasil AI</td><td>Memakai AI untuk riset, kritik, dan simulasi juri, lalu memeriksa semuanya sendiri</td></tr></table>
   <div class="warn" style="margin-top:14px"><b>Wajib:</b> buka sendiri setiap sumber. Tautan harus hidup dan isinya sama dengan yang dikutip. Jurnal yang tidak bisa ditemukan, hapus.</div>
 
-  <h2 id="sistem">6. Sistem, bukan begadang</h2>
+  <h2 id="sistem">7. Sistem, bukan begadang</h2>
   <div class="card"><ul style="margin:0;padding-left:20px">
     <li>Satu ide bisa dipakai di beberapa lomba dengan menyesuaikan tema.</li>
     <li>Kerjakan beberapa lomba bersamaan di tahap berbeda: riset, tulis, revisi.</li>
